@@ -1,10 +1,8 @@
 
 <div class="container bg">
-	
+	<h1>Eat-Da-Burger App</h1>
 	<div class="row">
 	    <div class="center col-sm-12">
-		
-	        <h1>Eat-Da-Burger App</h1>
 	        <p></p>
 	    </div>
   	</div>
@@ -16,7 +14,6 @@
 			<br>
 			<h2>Burgers Available To Eat!</h2>
 			
-
 			<ul>
 			  {{#each burgers}}
 			    {{#unless this.devoured}}
@@ -26,35 +23,14 @@
 
 			        <form action="/{{this.id}}?_method=PUT" method="POST">
 			          <input type="hidden" name="devoured" value="true">
-			          <button class="btn-primary" type="submit">Devour It!</button>
+			          <button class="btn-primary devourBtn" data-id="{{this.id}}">Devour It!</button>
 			        </form>
 
 			      </li>
 			    {{/unless}}
 			  {{/each}}
 			</ul>
-
 	    </div>
-
-	    <div class="col-sm-6">
-
-			<h2>Burgers That Have Been Eaten!</h2>
-			
-			  {{#each burgers}}
-			    {{#if this.devoured}}
-			      <li>
-			      	{{this.id}}
-			        {{this.burger_name}}
-
-			      </li>
-			    {{/if}}
-			  {{/each}}
-			
-	    </div>
-
-  	</div>
-	<!-- end .row -->
-
 	<div class="row">
 	    <div class="center col-sm-12">
 
@@ -73,6 +49,31 @@
 	    </div>
 	
   	</div>
+	    <div class="col-sm-6">
+			<h2>Burgers That Have Been Eaten!</h2>
+			
+			  {{#each burgers}}
+			    {{#if this.devoured}}
+			      <li>
+			      	{{this.id}}
+			        {{this.burger_name}}
+
+			      </li>
+			    {{/if}}
+			  {{/each}}
+			
+	    </div>
+
+  	</div>
+	<!-- end .row -->
+
+	
+<!-- /container -->
+      <footer class=" center footer">
+        <div class="container">
+          <p style="text-align: center;"> copyright@burgerApp2020</p>
+        </div>
+      </footer>
 	<!-- end .row -->
 
 </div>
