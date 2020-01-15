@@ -6,7 +6,8 @@
 li {
     padding: 5px;
     margin: 10px;
-    background: #ffffff;
+    background: #eceff1;
+    ;
     list-style: none;
     border-radius: 5px;
 }
@@ -43,8 +44,8 @@ h2 {
 }
 
 .create-update-form {
-    padding: 15px;
-    margin: 15px;
+    padding: 5px;
+    margin: 25px;
     background: #eceff1;
     border: 1px black solid;
     border-radius: 5px;
@@ -83,6 +84,8 @@ body {
 .footer {
     text-align: center;
     text-shadow: 1px 1px #ffffff;
+    margin-bottom: 0;
+    font-size: xx-small;
 }
 
 .wrapper {

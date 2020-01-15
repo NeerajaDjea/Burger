@@ -1,26 +1,28 @@
-var connection = require("./config/connection");
 var express = require("express");
 var bodyParser = require("body-parser");
-var exphbs = require("express-handlebars");
-var routes = require("./controllers/burger_controller")
+var methodOverride = require("method-override");
+
+var port = 3003;
+
 var app = express();
-var methride = require("method-override");
 
-// use the routes
-app.use(routes)
-    // for deploying on heroku
-var PORT = process.env.PORT || 3308;
-//  bodyParser for the urlencoded and json
+// Serve static content for the app from the "public" directory in the application directory.
+app.use(express.static(process.cwd() + "/public"));
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-// set up handlebars for layout
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// Override with POST having ?_method=DELETE
+app.use(methodOverride("_method"));
+
+// Set Handlebars.
+var exphbs = require("express-handlebars");
+
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-app.use(express.static('public'));
+// Import routes and give the server access to them.
+var routes = require("./controllers/burger_controller");
 
-app.listen(PORT, function() {
-    console.log("server listening on http://localhost" + PORT);
+app.use("/", routes);
 
-});
+app.listen(port);
