@@ -35,6 +35,7 @@ img {
 h1 {
     text-align: center;
     text-shadow: 2px 2px #ffffff;
+    margin-bottom: 2px;
 }
 
 h2 {
@@ -43,9 +44,14 @@ h2 {
     border-radius: 5px;
 }
 
+h3 {
+    text-align: center;
+    text-shadow: 1px 1px #ffffff;
+}
+
 .create-update-form {
     padding: 5px;
-    margin: 25px;
+    margin: 1px 150px;
     background: #eceff1;
     border: 1px black solid;
     border-radius: 5px;
@@ -57,6 +63,11 @@ h2 {
 
 .btn-primary {
     border-radius: 15px;
+}
+
+.btn-primary:hover {
+    background-color: rgb(58, 56, 56);
+    color: white;
 }
 
 html,
