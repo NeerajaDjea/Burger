@@ -12,7 +12,7 @@ if (process.env.JAWSDB_URL) {
     });
 };
 
-
+var PORT = process.env.PORT || 3306;
 
 // Make connection.
 connection.connect(function(err) {
