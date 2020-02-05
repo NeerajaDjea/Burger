@@ -1,6 +1,7 @@
 var mysql = require("mysql");
 if (process.env.JAWSDB_URL) {
     connection = mysql.createConnection(process.env.JAWSDB_URL)
+
 } else {
 
     var connection = mysql.createConnection({
@@ -20,8 +21,9 @@ connection.connect(function(err) {
         console.error("error connecting: " + err.stack);
         return;
     }
-    console.log("listeneing to port: 3003");
+    console.log("listeneing to port: 3006");
 });
+
 
 // Export connection for our ORM to use.
 module.exports = connection;

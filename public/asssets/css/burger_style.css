@@ -1,3 +1,9 @@
+body {
+    box-sizing: border-box;
+    margin: 0;
+    margin: 0;
+}
+
 .row {
     display: flex;
     justify-content: space-around;
@@ -7,7 +13,6 @@ li {
     padding: 5px;
     margin: 10px;
     background: #eceff1;
-    ;
     list-style: none;
     border-radius: 5px;
 }
@@ -51,10 +56,12 @@ h3 {
 
 .create-update-form {
     padding: 5px;
-    margin: 1px 150px;
-    background: #eceff1;
+    margin: 1px 15px;
+    width: 100%;
+    background: #d9e9fc;
     border: 1px black solid;
     border-radius: 5px;
+    text-align: center;
 }
 
 .form-group {
